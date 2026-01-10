@@ -479,6 +479,45 @@ grid-template-areas:
 }
 
 
+/*This is for right side layout styles*/
+
+.right-sidelayout{
+  background-color: var(--white-color);
+  padding: 40px;
+  margin-right: 100px;
+  border-radius: var(--Edge-radius);
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+.right-sidelayout .blogcard{
+  display: flex;
+  
+}
+
+.right-sidelayout .blogcard .thumbnail .image-blogcard{
+  flex-basis: 150px;
+  margin-right: 20px;
+  background-color: var(--mediumgray-color);
+}
+.right-sidelayout .blogcard .content{
+  flex-basis: 500px; 
+
+  }
+
+.right-sidelayout .blogcard h3{
+  color: var(--Darkergray-color);
+}
+.right-sidelayout .blogcard .image-blogcard img{
+  border-radius: var(--Edge-radius);
+  max-width: 100%;
+}
+
+
+
+
 
 
 
