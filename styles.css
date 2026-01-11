@@ -20,7 +20,7 @@
    --text-font: Lato;
 
    /*All border radius*/
-    --Edge-radius: 3cap;
+    --Edge-radius: 1cap;
  
  /*Margin and Padding*/
   --my-margin: 1em;
@@ -459,6 +459,20 @@ grid-template-areas:
 
 }
 
+@media (max-width: 600px){
+  .multi-layout{
+display: grid;
+grid-template-columns: repeat(auto, 1fr);
+grid-template-rows: repeat(auto, 1fr);
+grid-template-areas:
+"head head""left-art right-art"
+"left-art right-art"
+;
+
+
+  
+  }
+}
 
 
 /*multi-layout grid names*/
@@ -494,6 +508,8 @@ grid-template-areas:
 
 .right-sidelayout .blogcard{
   display: flex;
+  justify-content: center;
+  align-items: center;
   
 }
 
@@ -513,6 +529,55 @@ grid-template-areas:
 .right-sidelayout .blogcard .image-blogcard img{
   border-radius: var(--Edge-radius);
   max-width: 100%;
+}
+/*four-cards style*/
+
+.four-cards{
+  display: flex;
+  flex-direction: column;
+  margin-left: 100px;
+  margin-right: 100px;
+
+}
+.four-cards .four-blogcards .blogcard{
+  display: flex;
+  flex-direction: column;
+ flex: 1;
+ gap: 10px;
+}
+
+.four-cards .four-blogcards .blogcard .content{
+flex-grow: 1;
+}
+
+
+.four-cards .section-header{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+
+.four-cards .four-blogcards{
+  display: flex;
+  flex-direction: row;
+  gap: var(--space-between);
+    flex-wrap: wrap;
+}
+
+.four-cards .four-blogcards .blogcard .content h3{
+  color: var(--Darkergray-color);
+}
+
+
+.four-cards .four-blogcards .blogcard .thumbnail img{
+  border-radius: var(--Edge-radius);
+  max-width: 100%;
+  height: auto;
+}
+.four-cards .four-blogcards .blogcard .thumbnail{
+  background-color: var(--lightergray-color);
+  border-radius: var(--Edge-radius);
 }
 
 
