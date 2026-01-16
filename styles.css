@@ -3,6 +3,7 @@
 
 *{
   box-sizing: border-box;
+  margin-top: 0;
 }
 
 /*Custom CSS props*/
@@ -94,6 +95,7 @@ header{
   flex-wrap: wrap;
   margin-left: var(--body-margin);
   margin-right: var(--body-margin);
+  margin-top: 40px;
 }
 
 
@@ -110,7 +112,7 @@ header .navigation ul{
 header .navigation ul li{
 
   font-family: var(--text-font);
-  border-right: 1px solid var(--Darkergray-color);
+  
   cursor: pointer;
   transition: color 0.5s;
 
@@ -136,6 +138,26 @@ header .navigation ul li a{
   font-weight: 700;
   padding: 0 25px;
 }
+
+
+.navigation .nav-links{
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 250px;
+  display: none;
+  flex-direction: column;
+  background-color: var(--lightergray-color);
+
+  z-index: 999;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex: 1;
+  padding-top: 20px;
+  
+}
+
 
 
 
