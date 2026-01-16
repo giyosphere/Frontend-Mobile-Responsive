@@ -1,7 +1,9 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
-
+*{
+  box-sizing: border-box;
+}
 
 /*Custom CSS props*/
 :root{
@@ -12,7 +14,7 @@
   /*Colors*/
   --Darkergray-color: rgb(61, 61, 61);
   --mediumgray-color: rgb(101, 98, 98);
-  --lightergray-color:rgb(196, 193, 193);
+  --lightergray-color:rgb(244, 244, 244);
   --very-light-gray-color:rgb(243, 242, 242);
   --white-color: white;
 
@@ -166,15 +168,14 @@ header .top-logo span:hover{
 /*main container banner*/
 .container{
   margin: 0;
-  width: 100%;
+ 
 }
 .container .banner{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: vh;
-  max-width: 100%;
+
 
  background-color: var(--Darkergray-color);
  border-radius: var(--Edge-radius);
@@ -535,9 +536,11 @@ grid-template-areas:
 .four-cards{
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin-left: 100px;
   margin-right: 100px;
-
+ 
 }
 .four-cards .four-blogcards .blogcard{
   display: flex;
@@ -580,8 +583,92 @@ flex-grow: 1;
   border-radius: var(--Edge-radius);
 }
 
+.four-cards .subscribe{
+  display: flex;
+  flex-direction: column;
+
+  background-color: var(--lightergray-color);
+  margin-top: 2rem;
+  padding: 2rem;
+  border-radius: var(--Edge-radius);
+  justify-content: center;
+  align-items: center;
+ 
+ width: 100%;
+  
+}
+
+.four-cards .subscribe header h1{
+  color: var(--Darkergray-color);
+  font-weight: 900;
+
+}
+
+.four-cards .subscribe .para {
+  line-height: 1.6;
+  max-width: 400px;
+  text-align: center;
+ 
+}
+
+.four-cards .subscribe .para .p{
+  flex-grow: 2;
+}
+
+.four-cards .subscribe .this-input input[type="text"]{
+  height: 30px;
+  width: 250px;
+
+}
+
+.four-cards .subscribe .this-input{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.four-cards .subscribe .this-input button{
+  height: 36px;
+  width: 100px;
+  margin-left: 10px;
+  border-radius: var(--Edge-radius);
+  border-style: none;
+  cursor: pointer;
+  font-family: var(--text-font);
+  font-size: medium;
+  color: var(--Darkergray-color);
+  opacity: 0.9;
+  transition: background-color 0.7s ease-out;
+}
 
 
+
+/*Footer styles*/
+footer{
+  background-color: var(--lightergray-color);
+  padding: 40px;
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  display: flex;
+  flex-direction: row;
+ 
+}
+
+footer  .tags h3, footer .Social h3, footer .about h3{
+  color: var(--Darkergray-color);
+  margin-bottom: 10px;
+}
+
+
+footer .main-logo{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
 
 
 
