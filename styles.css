@@ -715,10 +715,35 @@ footer .footer-links a, .tags ul a, footer .Social ul , .about ul a{
 
 }
 
-.footer .Social ul li {
+footer .Social ul {
 
-  padding: 100px;
+display: flex;
+flex-direction: column;
+gap: 10px;
 }
+
+footer .Social ion-icon {
+  font-size: 25px;
+}
+
+footer .Social ul li{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+
+}
+
+footer .Social ul li span:first-child {
+  flex-grow: 1;
+}
+footer .Social ul li span:nth-child(2) {
+  flex-grow: 1;
+}
+
+
+
 
 
 
