@@ -17,7 +17,7 @@
   --mediumgray-color: rgb(101, 98, 98);
   --lightergray-color:rgb(244, 244, 244);
   --very-light-gray-color:rgb(243, 242, 242);
-  --white-color: white;
+  --white-color: rgb(255, 255, 255);
 
   /*font styles*/
    --text-font: Lato;
@@ -703,7 +703,7 @@ footer .footer-content{
   text-align: start;
 }
 
-footer .footer-links a .tags ul, footer .Social ul, .about ul{
+footer .footer-links a, .tags ul li, footer .Social ul, .about ul{
   list-style: none;
   padding-left: 0;
 
@@ -740,6 +740,20 @@ footer .Social ul li span:first-child {
 }
 footer .Social ul li span:nth-child(2) {
   flex-grow: 1;
+}
+
+footer .tags ul li{
+  background-color: var(--white-color);
+  border-radius: 1cap;
+  width: fit-content;
+  padding: 5px;
+
+ 
+}
+footer .tags ul{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 
