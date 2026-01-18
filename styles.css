@@ -671,16 +671,15 @@ footer{
   padding: 40px;
   margin-top: 60px;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  display: flex;
   flex-direction: row;
+  
+  align-items: flex-start;
+  justify-content: space-evenly;
+
  
 }
 
-footer  .tags h3, footer .Social h3, footer .about h3{
+footer .tags h3, footer .Social h3, footer .about h3{
   color: var(--Darkergray-color);
   margin-bottom: 10px;
 }
@@ -688,17 +687,38 @@ footer  .tags h3, footer .Social h3, footer .about h3{
 
 footer .main-logo{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: flex-start;
 }
 
+footer  .footer-right{
+  display: flex;
+  flex-direction: column;
+  
+}
 
+footer .footer-content{
+  line-height: 1.6;
+  max-width: 400px;
+  text-align: start;
+}
 
+footer .footer-links a .tags ul, footer .Social ul, .about ul{
+  list-style: none;
+  padding-left: 0;
 
+}
 
+footer .footer-links a, .tags ul a, footer .Social ul , .about ul a{
+ text-decoration: none;
+  color: var(--mediumgray-color);
 
+}
 
+.footer .Social ul li {
 
+  padding: 100px;
+}
 
 
 
