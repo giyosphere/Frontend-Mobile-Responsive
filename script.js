@@ -1,3 +1,7 @@
+
+
+
+
 function showSidebar(){
   const navlinks = document.querySelector('.navigation .nav-links');
   navlinks.style.display = 'flex';

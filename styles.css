@@ -144,6 +144,10 @@ header .navigation ul li a{
  
 }
 
+.top-logo ul{
+  list-style: none;
+  cursor: pointer;
+}
 
 .navigation .nav-links{
   position: fixed;
@@ -161,6 +165,7 @@ header .navigation ul li a{
   flex: 1;
   padding-top: 20px;
   transition: 0.5s ease;
+  border-radius: var(--Edge-radius);
 }
 
 .nav-links.active{
