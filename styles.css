@@ -3,7 +3,7 @@
 
 *{
   box-sizing: border-box;
-  margin-top: 0;
+  margin: 0;
 }
 
 /*Custom CSS props*/
@@ -74,7 +74,7 @@
 
 
 .main-logo span{
-padding-right: 5px;
+padding-right: clamp(0.2rem, 1vw, 0.5rem);
 font-size: var(--main-logo) ;
 color: var(--Darkergray-color);
 
@@ -84,6 +84,7 @@ stroke-width: var(--ionicon-stroke-width);
 
 .main-logo h2{
   color: var(--Darkergray-color);
+  font-size: clamp(1rem, 2.5vw, 2rem);
 
   
 }
@@ -93,9 +94,12 @@ header{
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin-left: var(--body-margin);
-  margin-right: var(--body-margin);
+ padding-left: clamp(16px, 5vw, 100px);
+  padding-right: clamp(16px, 5vw, 100px);
+  margin-left: 0;
+  margin-right: 0;
   margin-top: 40px;
+
 }
 
 
@@ -107,6 +111,9 @@ header .navigation ul{
   padding-left: 0;
   gap: 20px;
   flex-wrap: wrap;
+  background-color: var(--white-color);
+  border-radius: var(--Edge-radius);
+  padding: clamp(0.3rem, 1vw, 0.5rem) clamp(0.6rem, 2vw, 1rem) ;
 }
 
 header .navigation ul li{
@@ -147,6 +154,7 @@ header .navigation ul li a{
 .top-logo ul{
   list-style: none;
   cursor: pointer;
+  display: none;
 }
 
 .navigation .nav-links{
@@ -168,10 +176,7 @@ header .navigation ul li a{
   border-radius: var(--Edge-radius);
 }
 
-.nav-links.active{
 
-  right: 0;
-}
 
 
 
@@ -194,11 +199,6 @@ header .top-logo span:hover{
   transform: scaleX(1.5) scaleY(1.5) ;
   transition: 0.5s;
 }
-
-
-
-
-
 
 
 
@@ -255,9 +255,10 @@ font-family: var(--text-font);
 }
 
 .container .banner h3{
-  padding-bottom: 2em;
+  padding-bottom: clamp(0.5rem, 1.5vw, 1rem);
   opacity: 0.5;
   letter-spacing: 2px;
+  font-size: clamp(0.8rem, 2.5vw, 1.5rem) ;
 }
 
 .container .banner p{
@@ -268,30 +269,35 @@ font-family: var(--text-font);
   color: var(--white-color);
   text-align: center;
   opacity: 0.7;
-  font-size: 20px;
+  font-size: clamp(1rem, 3vw, 2rem);
   
 }
 .container .banner h1{
   font-weight: 900;
+  font-size: clamp(1rem, 5vw, 4rem);
+  max-width: 1000px;
+  text-align: center;
 }
 
 
-.container .banner button{
+.container .banner button {
+  border-radius: var(--Edge-radius);
+  border-style: none;
 
-border-radius: var(--Edge-radius);
-border-style: none;
-padding-left: 40px;
-padding-right: 40px;
-padding-top: 15px;
-padding-bottom: 15px;
-cursor: pointer;
-font-family: var(--text-font);
+  padding: 
+    clamp(0.6rem, 1.5vw, 1rem)
+    clamp(1.5rem, 4vw, 2.5rem);
 
-font-size: medium;
-color: var(--Darkergray-color);
-opacity: 0.9;
-transition: background-color 0.7s ease-out;
+  cursor: pointer;
+  font-family: var(--text-font);
+
+  font-size: clamp(0.9rem, 2.2vw, 1.1rem);
+  color: var(--Darkergray-color);
+  opacity: 0.9;
+
+  transition: background-color 0.7s ease-out;
 }
+
 
 
 .container .banner button:hover{
@@ -299,6 +305,25 @@ transition: background-color 0.7s ease-out;
   color: var(--white-color);
   transition: 0.5s;
 }
+
+@media (max-width: 1000px){
+ .navigation .main-navlink{
+  display: none;
+ }
+}
+
+@media (max-width: 1360px){
+ header .top-logo span{
+  display: none;
+ }
+}
+
+@media (max-width: 1360px){
+ header .top-logo ul{
+  display: block;
+ }
+}
+
 
 /*Three layout section styles*/
 .three-layout{
@@ -347,6 +372,23 @@ flex: 1;
   color: var(--Darkergray-color);
 }
 
+@media (max-width: 500px){
+  .three-layout .card img{
+  max-height: 90%;
+  border-radius: var(--Edge-radius);
+ 
+
+}
+} 
+
+@media (max-width: 667px){
+  .three-layout .card img{
+  max-height: 70%;
+  border-radius: var(--Edge-radius);
+ 
+
+}
+} 
 
 
 /*Multi-layout styles*/
@@ -354,6 +396,12 @@ flex: 1;
 
 .multi-layout{
   background-color: var(--very-light-gray-color);
+  display: flex; 
+  flex-direction: row;
+
+  padding: 30px;
+gap: 40px;
+
 }
 
 .multi-layout .multi-head h1{
@@ -373,13 +421,17 @@ flex: 1;
   color: var(--Darkergray-color);
 }
 
+.multi-layout .left-side{
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 .multi-layout .left-side .with-thumbnails{
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-
-
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
   background-image: url(images/thumbbook.png);
   background-color:var(--Darkergray-color);
@@ -387,7 +439,7 @@ align-items: center;
   background-position: center center;
   border-radius: 3cap;
   height: 420px;
-  width: 820px;
+  width: 100%
 
 }
 
@@ -397,10 +449,7 @@ align-items: center;
     color: var(--very-light-gray-color);
 }
 
-.multi-layout .left-side{
-  margin-left: 100px;
-  margin-right: 100px;
-}
+
 
 .multi-layout .left-side .left-blogcards .info .thumbnail{
   height: 250px;
@@ -436,6 +485,7 @@ justify-content: center;
 .multi-layout .left-side .left-blogcards .info .thumbnail-child{
   display: flex;
   flex-direction: column;
+
  
 }
 .multi-layout .left-side .left-blogcards .info .thumbnail-child .info-top{
@@ -445,6 +495,58 @@ justify-content: center;
 .multi-layout .left-side .left-blogcards .info .thumbnail-child .info-bottom{
   color: var(--mediumgray-color)
 }
+
+@media (max-width: 780px){
+  .multi-layout .left-side .left-blogcards .info{
+    flex-wrap: wrap;
+  }
+}
+
+
+/*This is for right side layout styles*/
+
+.right-sidelayout{
+  background-color: var(--white-color);
+ 
+  margin-right: 100px;
+  border-radius: var(--Edge-radius);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 100%;
+  width: 100%;
+  padding: 20px;
+
+ 
+  
+}
+
+
+.right-sidelayout .blogcard{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.right-sidelayout .blogcard .thumbnail .image-blogcard{
+  flex-basis: 150px;
+  margin-right: 20px;
+  background-color: var(--mediumgray-color);
+}
+.right-sidelayout .blogcard .content{
+  flex-basis: 500px; 
+
+  }
+
+.right-sidelayout .blogcard h3{
+  color: var(--Darkergray-color);
+}
+.right-sidelayout .blogcard .image-blogcard img{
+  border-radius: var(--Edge-radius);
+  width: 150px;
+}
+
 
 
 
@@ -477,97 +579,14 @@ justify-content: center;
 }
 
 
+/*mobile responsive*/
 
-
-
-
-
-
-
-.multi-layout{
-display: grid;
-grid-template-columns: repeat(2, 1fr);
-grid-template-rows: repeat(auto 1fr);
-grid-template-areas:
-"head head"
-"left-art right-art"
-"left-art right-art"
-;
-
-
-}
-
-@media (max-width: 600px){
+@media (max-width:780px){
   .multi-layout{
-display: grid;
-grid-template-columns: repeat(auto, 1fr);
-grid-template-rows: repeat(auto, 1fr);
-grid-template-areas:
-"head head""left-art right-art"
-"left-art right-art"
-;
-
-
-  
+    flex-direction: column;
   }
 }
 
-
-/*multi-layout grid names*/
-
-.multi-layout .multi-head{
-  grid-area: head;
-  text-align: center;
-}
-
-
-.multi-layout .left-side {
-  grid-area: left-art;
-}
-
-
-.multi-layout .multi-head .right-sidelayout{
-  grid-area: right-art;
-}
-
-
-/*This is for right side layout styles*/
-
-.right-sidelayout{
-  background-color: var(--white-color);
-  padding: 40px;
-  margin-right: 100px;
-  border-radius: var(--Edge-radius);
-
-  display: flex;
-  flex-direction: column;
-}
-
-
-.right-sidelayout .blogcard{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
-}
-
-.right-sidelayout .blogcard .thumbnail .image-blogcard{
-  flex-basis: 150px;
-  margin-right: 20px;
-  background-color: var(--mediumgray-color);
-}
-.right-sidelayout .blogcard .content{
-  flex-basis: 500px; 
-
-  }
-
-.right-sidelayout .blogcard h3{
-  color: var(--Darkergray-color);
-}
-.right-sidelayout .blogcard .image-blogcard img{
-  border-radius: var(--Edge-radius);
-  max-width: 100%;
-}
 /*four-cards style*/
 
 .four-cards{
@@ -575,15 +594,30 @@ grid-template-areas:
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-left: 100px;
-  margin-right: 100px;
+
+  
  
 }
+
+.four-blogcards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.blogcard {
+  flex: 1 1 25%;
+  min-width: 280px;   /* 👈 IMPORTANT */
+}
+
+
+
 .four-cards .four-blogcards .blogcard{
   display: flex;
   flex-direction: column;
  flex: 1;
  gap: 10px;
+ 
 }
 
 .four-cards .four-blogcards .blogcard .content{
@@ -602,7 +636,8 @@ flex-grow: 1;
   display: flex;
   flex-direction: row;
   gap: var(--space-between);
-    flex-wrap: wrap;
+
+ 
 }
 
 .four-cards .four-blogcards .blogcard .content h3{
@@ -677,7 +712,6 @@ flex-grow: 1;
   opacity: 0.9;
   transition: background-color 0.7s ease-out;
 }
-
 
 
 /*Footer styles*/
@@ -770,19 +804,11 @@ footer .tags ul li{
 footer .tags ul{
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 11px;
 }
 
 footer .footer, .tags, .Social, .about{
 flex: 1;
 
+
 }
-
-
-
-
-
-
-
-
-
